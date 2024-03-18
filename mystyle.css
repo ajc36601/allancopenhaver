@@ -244,6 +244,7 @@
   .disabled-links{
     pointer-events: none;
     text-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
   }
 
