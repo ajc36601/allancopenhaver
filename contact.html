@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan Copenhaver</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-element navbar-title">
+            Allan Copenhaver
+        </a>
+        <a href="aboutme.html" class="navbar-element navbar-nav">
+            About Me
+        </a>
+        <div class="dropdown">
+            <!--<div class="navbar-text">
+                Articles
+                <img src="dropdown.png" class="dropdown-icon">
+            </div>-->
+            <input type="checkbox" id="dropdown">
+            <label for="dropdown" id="dropdown-label" class="navbar-element navbar-nav">Articles&nbsp;<img src="dropdown.png" class="dropdown-icon"></label>
+            <div class="dropdown-content">
+                <a href="1.html">Section 1 Articles</a>
+                <a href="2.html">Section 2 Articles</a>
+                <a href="3.html">Section 3 Articles</a>
+            </div>
+        </div>
+        <a href="contact.html" class="navbar-element navbar-nav">
+            Contact
+        </a>
+        <div class="sliding">
+            <input type="checkbox" id="sliding">
+            <label for="sliding" id="sliding-label"></label>
+            <div class="sliding-content">
+                <a href="aboutme.html" class="sliding-element">
+                    About Me
+                </a>
+                <div class="sliding-dropdown">
+                    <input type="checkbox" id="sliding-dropdown">
+                    <label for="sliding-dropdown" id="sliding-dropdown-label" class="sliding-element">Articles&nbsp;<img src="dropdown.png" class="dropdown-icon"></label>
+                    <div class="sliding-dropdown-content">
+                        <a href="1.html" class="disabled-links">Section 1 Articles</a>
+                        <a href="2.html" class="disabled-links">Section 2 Articles</a>
+                        <a href="3.html" class="disabled-links">Section 3 Articles</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="sliding-element" id="contact">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <h2>Contact</h2>
+        <hr>
+        <form>
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname"><br><br>
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname"><br><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email"><br><br>
+            <label for="mess">Message</label><br>
+            <textarea id="mess" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" id="submit">
+        </form>
+    </div>
+    <div class="footer">
+        Created By AJ
+    </div>
+</body>
+</html>

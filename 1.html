@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan Copenhaver</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-element navbar-title">
+            Allan Copenhaver
+        </a>
+        <a href="aboutme.html" class="navbar-element navbar-nav">
+            About Me
+        </a>
+        <div class="dropdown">
+            <!--<div class="navbar-text">
+                Articles
+                <img src="dropdown.png" class="dropdown-icon">
+            </div>-->
+            <input type="checkbox" id="dropdown">
+            <label for="dropdown" id="dropdown-label" class="navbar-element navbar-nav">Articles&nbsp;<img src="dropdown.png" class="dropdown-icon"></label>
+            <div class="dropdown-content">
+                <a href="1.html">Section 1 Articles</a>
+                <a href="2.html">Section 2 Articles</a>
+                <a href="3.html">Section 3 Articles</a>
+            </div>
+        </div>
+        <a href="contact.html" class="navbar-element navbar-nav">
+            Contact
+        </a>
+        <div class="sliding">
+            <input type="checkbox" id="sliding">
+            <label for="sliding" id="sliding-label"></label>
+            <div class="sliding-content">
+                <a href="aboutme.html" class="sliding-element">
+                    About Me
+                </a>
+                <div class="sliding-dropdown">
+                    <input type="checkbox" id="sliding-dropdown">
+                    <label for="sliding-dropdown" id="sliding-dropdown-label" class="sliding-element">Articles&nbsp;<img src="dropdown.png" class="dropdown-icon"></label>
+                    <div class="sliding-dropdown-content">
+                        <a href="1.html" class="disabled-links">Section 1 Articles</a>
+                        <a href="2.html" class="disabled-links">Section 2 Articles</a>
+                        <a href="3.html" class="disabled-links">Section 3 Articles</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="sliding-element" id="contact">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Section 1 Articles</h1>
+        <hr>
+        <div class="card">
+            <h2>Title</h2>
+            <h3>Date / Subject</h3>
+            <p>Do you really listen when you are talking with someone? I have a friend who listens in an unforgiving way. She actually takes every word you say as being something important and when you have a friend that listens like that, words take on a whole new mea...</p>
+            <a href="article.html" class="read">Read More</a>
+        </div>
+        
+        <div class="card">
+            <h2>Title</h2>
+            <h3>Date / Subject</h3>
+            <p>Do you really listen when you are talking with someone? I have a friend who listens in an unforgiving way. She actually takes every word you say as being something important and when you have a friend that listens like that, words take on a whole new mea...</p>
+            <a href="article.html" class="read">Read More</a>
+        </div>
+
+        <div class="card">
+            <h2>Title</h2>
+            <h3>Date / Subject</h3>
+            <p>Do you really listen when you are talking with someone? I have a friend who listens in an unforgiving way. She actually takes every word you say as being something important and when you have a friend that listens like that, words take on a whole new mea...</p>
+            <a href="article.html" class="read">Read More</a>
+        </div>
+    </div>
+    <div class="footer">
+        Created By AJ
+    </div>
+</body>
+</html>
