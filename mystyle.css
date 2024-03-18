@@ -132,6 +132,7 @@
     height: 50px;
     cursor: pointer;
     text-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     display: flex;
     align-items: center;
