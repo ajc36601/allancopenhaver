@@ -15,7 +15,18 @@
   }
 
   .content{
-    margin: 200px 80px 80px 80px;
+    margin: clamp(160px,18vw,200px) clamp(40px,6vw,80px) clamp(40px,6vw,80px) clamp(40px,6vw,80px);
+    min-width: 200px;
+  }
+
+  .article-img{
+    margin: clamp(10px,5vw, 40px);
+    width: 50%;
+  }
+
+  .section-icon{
+    height: clamp(30px, 8vw, 50px);
+    float: right;
   }
 
   .footer{
@@ -42,6 +53,9 @@
   form label{
     text-transform: uppercase;
     font-size: 12pt;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   input, textarea{
@@ -51,6 +65,7 @@
   }
 
   textarea{
+    display: block;
     resize: none;
     max-width: 450px;
     height: 200px;
@@ -59,9 +74,10 @@
 
   #submit{
     width: 100px;
+    margin-top: 30px;
   }
 
-  .read{
+  .read, #submit{
     padding: 10px;
     display: inline-block;
     background: darkblue;
@@ -71,6 +87,7 @@
     text-transform: uppercase;
     font-size: 10pt;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: none;
   }
 
   .read:hover{
@@ -88,7 +105,7 @@
 
   h2{
     font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 40pt;
+    font-size: clamp(20pt,9vw,40pt);
     margin: 0;
     text-transform: uppercase;
     font-weight:bold;
@@ -97,7 +114,6 @@
   h3{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 12pt;
-    
     font-weight: light;
   }
 
