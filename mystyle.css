@@ -21,7 +21,7 @@
 
   .article-img{
     margin: clamp(10px,5vw, 40px);
-    width: 50%;
+    width: clamp(150px, 50%, 300px);
   }
 
   .section-icon{
