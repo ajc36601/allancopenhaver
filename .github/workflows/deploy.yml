@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.15.0'
+
       - name: Deploy via SSH
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
