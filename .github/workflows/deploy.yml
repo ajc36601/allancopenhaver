@@ -27,7 +27,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST << 'EOF'
             set -e
             echo "✅ Connected to EC2"
-            cd $APP_DIR
+            cd allancopenhaver
             echo "📂 In directory: $(pwd)"
             echo "📄 Files:"
             ls -la
