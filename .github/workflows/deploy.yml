@@ -25,9 +25,19 @@ jobs:
           chmod 600 private_key.pem
 
           ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST << 'EOF'
+            set -e
+            echo "✅ Connected to EC2"
             cd $APP_DIR
+            echo "📂 In directory: $(pwd)"
+            echo "📄 Files:"
+            ls -la
+            echo "🔄 Pulling latest code..."
             git pull origin main
+            echo "📦 Installing dependencies..."
             npm install
+            echo "🏗 Building app..."
             npm run build
+            echo "🚀 Restarting app with PM2..."
             pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+            echo "✅ Deployment complete"
           EOF
