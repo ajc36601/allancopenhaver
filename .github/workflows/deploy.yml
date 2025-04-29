@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.15.0'
+        id: node
+
+      - name: Confirm Node.js version
+        run: |
+          echo "Node version:"
+          node -v
 
       - name: Deploy via SSH
         env:
