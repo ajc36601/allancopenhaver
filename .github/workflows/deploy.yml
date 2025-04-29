@@ -13,17 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.15.0'
-        id: node
-
-      - name: Confirm Node.js version
-        run: |
-          echo "Node version:"
-          node -v
-
       - name: Deploy via SSH
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
@@ -38,17 +27,26 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST << 'EOF'
             set -e
             echo "✅ Connected to EC2"
+            
+            # Make sure nvm and Node.js 22 are available
+            export NVM_DIR="$HOME/.nvm"
+            source "$NVM_DIR/nvm.sh"
+            nvm use 22.15.0
+            node -v
+            npm -v
+
             cd allancopenhaver
-            echo "📂 In directory: $(pwd)"
-            echo "📄 Files:"
-            ls -la
             echo "🔄 Pulling latest code..."
             git pull origin main
+
             echo "📦 Installing dependencies..."
             npm install
+
             echo "🏗 Building app..."
             npm run build
+
             echo "🚀 Restarting app with PM2..."
             pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+
             echo "✅ Deployment complete"
           EOF
