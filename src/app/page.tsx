@@ -47,7 +47,7 @@ export default function Home() {
                   </p>
                   <p className="text-gray-700 mb-4">{article.description}</p>
                 </div>
-                <button className="mt-auto inline-block bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                <button className="mt-auto inline-block bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
                   Read More
                 </button>
               </div>
