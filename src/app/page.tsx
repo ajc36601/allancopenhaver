@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Home() {
-  const [articles, setArticles] = useState([]);
+interface Article {
+  title: string;
+  description: string;
+  dateTime: string;
+  text: string;
+}
 
-  interface Article {
-    title: string;
-    description: string;
-    dateTime: string;
-    text: string;
-  }
+export default function Home() {
+  const [articles, setArticles] = useState<Article[]>([]); // <-- FIXED
 
   useEffect(() => {
     async function fetchArticles() {
