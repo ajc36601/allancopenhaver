@@ -2,19 +2,17 @@ import { notFound } from 'next/navigation';
 import Navbar from '../../components/navbar';
 
 type ArticlePageProps = {
-  params: {
-    slug: string;
+  article: {
+    title: string;
+    text: string;
+    dateTime: string;
   };
 };
 
-export default async function ArticlePage({ params }: ArticlePageProps) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${encodeURIComponent(params.slug)}`);
-
-  if (!res.ok) {
+export default function ArticlePage({ article }: ArticlePageProps) {
+  if (!article) {
     return notFound();
   }
-
-  const article = await res.json();
 
   return (
     <>
@@ -28,3 +26,16 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   );
 }
 
+export async function getServerSideProps({ params }: { params: { slug: string } }) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${encodeURIComponent(params.slug)}`);
+
+  if (!res.ok) {
+    return { notFound: true };
+  }
+
+  const article = await res.json();
+
+  return {
+    props: { article },
+  };
+}
