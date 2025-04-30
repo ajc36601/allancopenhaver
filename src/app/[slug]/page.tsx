@@ -1,18 +1,16 @@
 import { notFound } from 'next/navigation';
 import Navbar from '../../components/navbar';
 
-type ArticlePageProps = {
-  article: {
-    title: string;
-    text: string;
-    dateTime: string;
-  };
+type Props = {
+  params: { slug: string };
 };
 
-export default function ArticlePage({ article }: ArticlePageProps) {
-  if (!article) {
-    return notFound();
-  }
+export default async function ArticlePage({ params }: Props) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${encodeURIComponent(params.slug)}`);
+
+  if (!res.ok) return notFound();
+
+  const article = await res.json();
 
   return (
     <>
@@ -24,18 +22,4 @@ export default function ArticlePage({ article }: ArticlePageProps) {
       </main>
     </>
   );
-}
-
-export async function getServerSideProps({ params }: { params: { slug: string } }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${encodeURIComponent(params.slug)}`);
-
-  if (!res.ok) {
-    return { notFound: true };
-  }
-
-  const article = await res.json();
-
-  return {
-    props: { article },
-  };
 }
