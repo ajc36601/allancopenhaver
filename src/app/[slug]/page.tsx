@@ -1,11 +1,7 @@
 import { notFound } from 'next/navigation';
 import Navbar from '../../components/navbar';
 
-type Props = {
-  params: { slug: string };
-};
-
-export default async function ArticlePage({ params }: Props) {
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${encodeURIComponent(params.slug)}`);
 
   if (!res.ok) return notFound();
