@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
 import { pool } from '../../../lib/db';
 
-export async function GET(req: Request, { params }: { params: { slug: string } }) {
+type tParams = Promise<{ slug: string }>;
+
+export async function GET(req: Request, { params }: { params: tParams }) {
   const param = await params;
   const slug = decodeURIComponent(param.slug);
 
