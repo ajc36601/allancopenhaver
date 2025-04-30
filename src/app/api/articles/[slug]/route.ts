@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { pool } from '../../../lib/db';
 
 export async function GET(req: Request, { params }: { params: { slug: string } }) {
-  const slug = decodeURIComponent(params.slug);
+  const param = await params;
+  const slug = decodeURIComponent(param.slug);
 
   try {
     const [rows] = await pool.query(
