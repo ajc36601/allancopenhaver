@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import type { Session } from 'next-auth';
 import { pool } from '../../../lib/db';
 
 export async function POST(req: Request) {
