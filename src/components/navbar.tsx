@@ -38,17 +38,18 @@ export default function Navbar() {
   };
 
   return (
-    <div className="m-5">
-      <nav className="flex items-center justify-between bg-gray-300 px-6 py-4 shadow-md">
-        {/* Left - Title */}
-        <div className="mr-6 pl-4 whitespace-nowrap">
-          <Link
-            href="/"
-            className="text-xl font-bold text-gray-800 hover:scale-105 transition-transform"
-          >
-            Allan Copenhaver&apos;s Blog
-          </Link>
-        </div>
+    <div className='border-b-black-200 border-b-2 mr-10 ml-10 mb-10'>
+      <nav className="flex items-center justify-between">
+        {/* Left - Logo SVG */}
+        <Link href="/">
+            <img
+              src="/allancopenhaver.png"
+              alt="Allan Copenhaver Logo"
+              className="h-60 w-auto ml-10 hover:scale-105 transition-transform"
+            />
+        </Link>
+
+
 
         {/* Middle - Nav Links */}
         <div className="hidden md:flex flex-col items-center gap-1">
@@ -72,7 +73,7 @@ export default function Navbar() {
         </div>
 
         {/* Right - Profile / Sign-In or Hamburger */}
-        <div className="ml-6 pr-4 flex items-center gap-4">
+        <div className="mr-10 flex items-center gap-4">
           {/* Desktop view: show profile or sign-in */}
           <div className="hidden md:block">
             {!session ? (

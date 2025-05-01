@@ -1,13 +1,5 @@
-import Navbar from '../../components/navbar';
+import TypePage from '../../components/typepage';
 
-export default function ReadingPage() {
-    return (
-        <>
-            <Navbar />
-            <div className="p-8">
-                <h1 className="text-3xl font-bold">What Am I Watching?</h1>
-            </div>
-        </>
-    );
+export default function WatchingPage() {
+  return <TypePage type={1} title="What Am I Watching?" />;
 }
-  

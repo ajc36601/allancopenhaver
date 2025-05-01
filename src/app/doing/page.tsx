@@ -1,13 +1,5 @@
-import Navbar from '../../components/navbar';
+import TypePage from '../../components/typepage';
 
 export default function DoingPage() {
-    return (
-        <>
-            <Navbar />
-            <div className="p-8">
-                <h1 className="text-3xl font-bold">What Am I Doing?</h1>
-            </div>
-        </>
-    );
+  return <TypePage type={0} title="What Am I Doing?" />;
 }
-  
